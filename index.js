@@ -17,13 +17,15 @@ btnStop.addEventListener("click", stopSwitch);
 let timerId = null;
 
 function startSwitch() {
+  btnStart.disabled = true;
    timerId = setInterval(() => {
         bgrSwitch();
     }, 1000);
 };
 
 function stopSwitch() {
-    clearInterval(timerId);
+  clearInterval(timerId);
+  btnStart.disabled = false;
 };
 
 const randomIntegerFromInterval = (min, max) => {
